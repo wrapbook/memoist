@@ -210,7 +210,7 @@ module Memoist
               set_cache = skip_cache && !frozen?
 
               if skip_cache
-                value = #{unmemoized_method}(*args)
+                value = #{unmemoized_method}(*args, **kwargs)
               else
                 value = #{memoized_ivar}[args]
               end
